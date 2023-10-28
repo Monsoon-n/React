@@ -1,0 +1,37 @@
+.home {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    user-select: none;
+}
+.nav {
+    width: 200px;
+    border-right: 1px solid black;
+}
+
+.nav .header {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.nav .item {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:hover {
+        background-color: #eee;
+    }
+}
+.active {
+    background: #eee;
+}
+
+.content {
+    flex: 1;
+}
