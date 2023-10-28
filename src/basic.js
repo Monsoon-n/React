@@ -1,12 +1,16 @@
+import { useNavigate, Outlet } from "react-router-dom";
 import "./Css/Basic.css";
 function Basic() {
+  const navigate = useNavigate();
   return (
     <div className="Basic">
       <div className="Banner">ECO</div>
       <table className="Table">
         <tbody>
           <td>
-            <tr className="Header">学校首页</tr>
+            <tr className="Header" onClick={() => navigate("/home")}>
+              学校首页
+            </tr>
             <tr>课程中心</tr>
             <tr>课程管理</tr>
             <tr>教室管理</tr>
@@ -24,6 +28,7 @@ function Basic() {
           </td>
         </tbody>
       </table>
+      <Outlet />
     </div>
   );
 }
