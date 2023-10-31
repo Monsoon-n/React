@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Basic from "./basic";
-import Show from "./show";
+import Basic from "./page/basic/basic";
+import Home from "./page/home/home";
+import Calculator from "./page/calculator/calculator";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
   {
@@ -10,14 +11,14 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/home",
-        element: <Show />,
+        element: <Home />,
+      },
+      {
+        path: "/calculator",
+        element: <Calculator />,
       },
     ],
   },
-  // {
-  //   path: "/home",
-  //   element: <Show />,
-  // },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
