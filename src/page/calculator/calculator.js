@@ -1,34 +1,45 @@
 import React, { useState } from "react";
 import "./Calculator.css";
+
 function Calculator() {
   function Calculator1({ which }) {
-    let value1, value2, operator;
-    const [result, setResult] = useState();
-    const defaultoption = "+";
-    operator = defaultoption;
+    const [result, setResult] = useState("");
+    const [operator, setOperator] = useState("+");
+    const [value1, setValue1] = useState("");
+    const [value2, setValue2] = useState("");
     const equal = () => {
-      // if (operator === "+") result = Number(value1) + Number(value2);
-      if (operator === "+") setResult(() => Number(value1) + Number(value2));
-      if (operator === "-") result = Number(value1) - Number(value2);
-      if (operator === "*") result = Number(value1) * Number(value2);
-      if (operator === "/" && Number(value2) !== 0)
-        result = Number(value1) / Number(value2);
-      if (operator === "/" && Number(value2) === 0) alert("sb");
+      if (operator === "+") {
+        setResult(() => Number(value1) + Number(value2));
+      }
+      if (operator === "-") {
+        setResult(() => Number(value1) - Number(value2));
+      }
+      if (operator === "*") {
+        setResult(() => Number(value1) * Number(value2));
+      }
+      if (operator === "/" && Number(value2) !== 0) {
+        setResult(() => Number(value1) / Number(value2));
+      }
+      if (operator === "/" && Number(value2) === 0) {
+        alert("sb");
+      }
       console.log(which + result);
     };
+    function Final() {
+      return <div>1号: {result}</div>;
+    }
     return (
       <div>
         <input
           type="text"
           className="Num1"
           onChange={(e) => {
-            value1 = e.target.value;
+            setValue1(e.target.value);
           }}
         />
         <select
-          defaultValue={defaultoption}
           className="Operator"
-          onChange={(e) => (operator = e.target.value)}
+          onChange={(e) => setOperator(e.target.value)}
         >
           <option value="+">+</option>
           <option value="-">-</option>
@@ -39,16 +50,18 @@ function Calculator() {
           type="text"
           className="Num2"
           onChange={(e) => {
-            value2 = e.target.value;
+            setValue2(e.target.value);
           }}
         />
         <button className="Equal" onClick={equal}>
           =
         </button>
         <input type="text" className="Result" value={result} />
+        <Final />
       </div>
     );
   }
+
   return (
     <div>
       <Calculator1 which={"一号"} />
