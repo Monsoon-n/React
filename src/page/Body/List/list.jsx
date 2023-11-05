@@ -79,6 +79,8 @@ function List() {
   ];
   const [index, Changeindex] = useState(0);
   if (index >= 17) Changeindex(0);
+
+  const [page, setPage] = useState(1)
   return (
     <div className="list">
       <div className="list-header">
@@ -92,13 +94,13 @@ function List() {
           <div className="icon">
             <SyncOutlined />
           </div>
-          <button className="change" onClick={() => Changeindex(index + 6)}>
+          <button className="change" onClick={() => setPage(page + 1 > 3 ? 1 : page + 1)}>
             换一换
           </button>
         </div>
       </div>
       <div className="list-body">
-        <div className="list-body1">
+        {/* <div className="list-body1">
           {list
             .filter((item) => item.key <= index + 2 && item.key >= index)
             .map((item) => (
@@ -117,7 +119,15 @@ function List() {
                 {item.key} {item.value}
               </div>
             ))}
-        </div>
+        </div> */}
+        {list.filter((item, index) => index >= (page - 1) * 6 && index < page * 6).map((item) => (
+          <div className={`${item.key} list-item`} key={item.key}>
+            {item.key}
+            {"  "}
+            {item.value}
+          </div>
+        ))}
+
       </div>
     </div>
   );

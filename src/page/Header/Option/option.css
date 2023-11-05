@@ -5,5 +5,8 @@
   color: black;
 }
 .ant-dropdown-menu-item-danger:hover {
-  background-color: aliceblue;
+  background-color: aliceblue !important;
+}
+.ant-dropdown-menu-title-content:hover {
+  color: blue;
 }
