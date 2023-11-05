@@ -1,0 +1,13 @@
+.Header {
+  width: 100vw;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+
+}
+.Right {
+  width: 20vw;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
