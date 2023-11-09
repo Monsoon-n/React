@@ -23,7 +23,7 @@ function MySearch() {
             placeholder=""
             enterButton="百度一下"
             size="large"
-            suffix={((<AudioOutlined />), (<CameraOutlined />))}
+            suffix={<div><AudioOutlined /> <CameraOutlined /></div>}
             onSearch={onSearch}
           />
         </Space>

@@ -29,16 +29,26 @@
   color: gray;
   cursor: pointer;
 }
-.list-body {
-  width: 654px;
-  height: 110px;
-  display: flex;
 
-}
 .list-body1 {
   width: 327px;
   height: 110px;
 }
-.list-body div {
+/* .list-body div {
   margin-top: 7px;
+} */
+
+.list-body {
+  margin-top: 20px;
+  width: 654px;
+  /* height: 110px; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 0;
+}
+.list-item {
+  width: 45%;
+  flex-shrink: 0;
 }
