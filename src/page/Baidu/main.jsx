@@ -1,9 +1,10 @@
 import React from "react";
 import Header from "./Header/header";
 import Body from "./Body/body";
+import "./main.css";
 function Main() {
   return (
-    <div>
+    <div className="Main">
       <Header />
       <Body />
     </div>

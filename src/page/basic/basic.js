@@ -13,6 +13,18 @@ function Basic() {
           <div className="Calculator" onClick={() => navigate("/calculator")}>
             计算器
           </div>
+          <div className="Baidu" onClick={() => navigate("/baidu")}>
+            百度
+          </div>
+          <div className="Redux" onClick={() => navigate("/redux")}>
+            Redux
+          </div>
+          <div
+            className="Redux-result"
+            onClick={() => navigate("/reduxresult")}
+          >
+            Redux-r
+          </div>
         </div>
         <div className="Show">
           <Outlet />
